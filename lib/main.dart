@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scapes_bouquet/pages/home_page.dart';
 // import 'package:scapes_bouquet/pages/login.dart';
 import 'package:scapes_bouquet/pages/register.dart';
+import 'package:scapes_bouquet/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      initialRoute: "/",
+      initialRoute: "/register",
       routes: {
-        "/": (context) => Register(),
-        "/home": (context) => HomePage(),
+        MyRoutes.registerRoute: (context) => Register(),
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
     );
   }
