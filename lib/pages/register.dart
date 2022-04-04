@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:scapes_bouquet/pages/home_page.dart';
 import 'package:scapes_bouquet/utils/routes.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  String name = "";
+  bool changeButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -17,7 +25,7 @@ class Register extends StatelessWidget {
             height: 20.0,
           ),
           Text(
-            "Welcome",
+            "Welcome $name",
             style: TextStyle(
               color: Colors.black,
               fontSize: 30,
@@ -37,6 +45,10 @@ class Register extends StatelessWidget {
                     hintText: "Enter Username",
                     labelText: "Username",
                   ),
+                  onChanged: (value) {
+                    name = value;
+                    setState(() {});
+                  },
                 ),
                 TextFormField(
                   obscureText: true,
@@ -48,13 +60,70 @@ class Register extends StatelessWidget {
                 SizedBox(
                   height: 50.0,
                 ),
-                ElevatedButton(
-                  child: Text("Sign Up"),
-                  style: TextButton.styleFrom(minimumSize: Size(170, 50)),
-                  onPressed: () {
+
+                InkWell(
+                  onTap: () async {
+                    setState(() {
+                      changeButton = true;
+                    });
+                    await Future.delayed(Duration(seconds: 1));
                     Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
+                  //simple container
+                  // child: Container(
+                  //   width: 170,
+                  //   height: 50,
+                  //   alignment: Alignment.center,
+                  //   child: Text(
+                  //     "Sign Up",
+                  //     style: TextStyle(
+                  //       color: Colors.white,
+                  //       fontWeight: FontWeight.bold,
+                  //       fontSize: 18,
+                  //     ),
+                  //   ),
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.deepOrange,
+                  //     borderRadius: BorderRadius.circular(8),
+                  //   ),
+                  // ),
+
+                  //animated container
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 1),
+                    width: changeButton ? 70 : 170,
+                    height: 50,
+                    alignment: Alignment.center,
+                    child: 
+                    changeButton
+                    ? Icon(
+                      Icons.done,
+                      color: Colors.white,
+                    ) 
+                    : 
+                    Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrange,
+                      shape: changeButton? BoxShape.circle : BoxShape.rectangle,
+                      // borderRadius: BorderRadius.circular(changeButton? 70 : 8),
+                    ),
+                  ),
                 ),
+
+                // ElevatedButton(
+                //   child: Text("Sign Up"),
+                //   style: TextButton.styleFrom(minimumSize: Size(170, 50)),
+                //   onPressed: () {
+                //     Navigator.pushNamed(context, MyRoutes.homeRoute);
+                //   },
+                // ),
               ],
             ),
           )
