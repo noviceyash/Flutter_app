@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:scapes_bouquet/models/catalog.dart';
 
 import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,9 +11,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Scapes Bouquet"),
       ),
-      body: Center(
-        child: Container(
-          child: Text("Scapes Home Page"),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index){
+            return ItemWidget(item: CatalogModel.items[index],);
+          },
         ),
       ),
       drawer: MyDrawer(),
