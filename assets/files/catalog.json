@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Birthday card",
+            "desc": "For Someone Special",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/8982B.jpg?v=1634120650"
+        },
+        {
+            "id": 2,
+            "name": "Anniversary card",
+            "desc": "For Someone Special",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/54a.jpg?v=1640675168"
+        },
+        {
+            "id": 3,
+            "name": "wedding card",
+            "desc": "For Someone Special",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/On_your_Engagement_Card__ENG00024_efd11e9d.jpg?v=1631862038"
+        },
+        {
+            "id": 4,
+            "name": "Congratulations card",
+            "desc": "Let's Celebrate",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/8907089614796-_1.jpg?v=1631861855"
+        },
+        {
+            "id": 5,
+            "name": "Teacher's Day card",
+            "desc": "Thank You",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/Thankyou_Teacher_Card__TDY_00166_0_cb22003e.jpg?v=1631862060"
+        },
+        {
+            "id": 6,
+            "name": "New Year card",
+            "desc": "Celebrate",
+            "price": 80,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/IMG_1299_ba59ea37-e554-439a-acb7-aee72764900b.jpg?v=1640247582"
+        },
+        {
+            "id": 7,
+            "name": "Oriental Touch",
+            "desc": "Pink Rose Bouquet",
+            "price": 1500,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/MT3651.jpg?v=1631537569"
+        },
+        {
+            "id": 8,
+            "name": "Shades Of Love",
+            "desc": "Collection of all flowers",
+            "price": 5000,
+            "color": "#33505a",
+            "image": "https://cdn.shopify.com/s/files/1/0583/3175/8777/products/MT8464.jpg?v=1631537783"
+        }
+    ]
+}
