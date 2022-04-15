@@ -1,7 +1,9 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scapes_bouquet/models/catalog.dart';
+import 'package:scapes_bouquet/utils/routes.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
 import "dart:convert";
 import '../widgets/drawer.dart';
@@ -38,6 +40,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: MyTheme.darkBluishColor,
+        child: Icon(CupertinoIcons.cart),
+      ),
         // appBar: AppBar(
         //   title: Text("Scapes Bouquet"),
         // ),
