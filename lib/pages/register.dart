@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scapes_bouquet/pages/home_page.dart';
 import 'package:scapes_bouquet/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -46,7 +47,7 @@ class _RegisterState extends State<Register> {
             Text(
               "Welcome $name",
               style: TextStyle(
-                color: Colors.black,
+                color: context.accentColor,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -98,7 +99,8 @@ class _RegisterState extends State<Register> {
                   ),
 
                   Material(
-                    color: Colors.deepOrange,
+                    // ignore: deprecated_member_use
+                    color: context.theme.buttonColor,
                     borderRadius: BorderRadius.circular(changeButton ? 70 : 8),
                     child: InkWell(
                       onTap: () => moveToHome(context),

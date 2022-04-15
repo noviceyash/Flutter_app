@@ -16,9 +16,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -27,7 +27,8 @@ class HomeDetailPage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {} ,
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor,),
+                          // ignore: deprecated_member_use
+                          backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
                           shape: MaterialStateProperty.all(StadiumBorder(),),
                         ),
                        child: "Buy".text.make(), 
@@ -48,12 +49,12 @@ class HomeDetailPage extends StatelessWidget {
                   arcType: VxArcType.CONVEY,
                   edge: VxEdge.TOP,
                   child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
+                        catalog.name.text.xl4.color(context.accentColor).bold.make(),
                         catalog.desc.text.make(),
                         10.heightBox,
                         "Gubergren est dolores dolor erat est rebum diam et clita sanctus, eos sed justo aliquyam stet ut, voluptua elitr nonumy amet amet, est sed dolores amet rebum justo lorem sed lorem sed. Labore est vero voluptua vero eirmod, sed magna diam accusam est elitr tempor, ea duo dolore dolor erat."

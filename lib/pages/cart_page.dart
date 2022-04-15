@@ -9,7 +9,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: "Cart".text.make(),
+        title: "Cart".text.bold.color(MyTheme.darkBluishColor).make(),
       ),
     );
   }
