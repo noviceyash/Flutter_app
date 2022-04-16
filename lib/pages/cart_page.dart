@@ -22,7 +22,6 @@ class CartPage extends StatelessWidget {
   }
 }
 
-
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,17 +34,23 @@ class _CartTotal extends StatelessWidget {
           "\₹0".text.xl5.color(context.theme.accentColor).make(),
           30.widthBox,
           ElevatedButton(
-           onPressed: () {},
-           // ignore: deprecated_member_use
-           style: ButtonStyle(backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)),
-           child: "Buy".text.white.make(),
-           ).w32(context),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "Buying not supported yet!".text.make(),
+              ));
+            },
+            // ignore: deprecated_member_use
+            style: ButtonStyle(
+                backgroundColor:
+                    // ignore: deprecated_member_use
+                    MaterialStateProperty.all(context.theme.buttonColor)),
+            child: "Buy".text.white.make(),
+          ).w32(context),
         ],
-        ),
+      ),
     );
   }
 }
-
 
 class _CartList extends StatefulWidget {
   @override
@@ -64,7 +69,7 @@ class _CartListState extends State<_CartList> {
           onPressed: () {},
         ),
         title: "Item 1".text.make(),
-      ) ,
+      ),
     );
   }
 }
