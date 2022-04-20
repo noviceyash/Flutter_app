@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scapes_bouquet/models/catalog.dart';
+import 'package:scapes_bouquet/widgets/home_widgets/add_to_cart.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:scapes_bouquet/models/catalog.dart';
@@ -24,15 +25,16 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
             children: [
                      "\₹${catalog.price}".text.bold.xl4.red800.make(),
-                      ElevatedButton(
-                        onPressed: () {} ,
-                        style: ButtonStyle(
-                          // ignore: deprecated_member_use
-                          backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
-                          shape: MaterialStateProperty.all(StadiumBorder(),),
-                        ),
-                       child: "Buy".text.make(), 
-                       ).wh(100, 50)
+                      // ElevatedButton(
+                      //   onPressed: () {} ,
+                      //   style: ButtonStyle(
+                      //     // ignore: deprecated_member_use
+                      //     backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
+                      //     shape: MaterialStateProperty.all(StadiumBorder(),),
+                      //   ),
+                      //  child: "Buy".text.make(), 
+                      //  )
+                      AddToCart(catalog: catalog,).wh(100, 50)
                     ],
         ).p32(),
       ),
