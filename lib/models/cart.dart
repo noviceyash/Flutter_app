@@ -1,6 +1,15 @@
 import 'package:scapes_bouquet/models/catalog.dart';
 
 class CartModel {
+  //singleton field 
+  static final cartModel = CartModel._internal();
+
+  //singleton field constructor
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
+  
   //catalog field
   late CatalogModel _catalog;
 
