@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scapes_bouquet/core/store.dart';
 import 'package:scapes_bouquet/pages/cart_page.dart';
 import 'package:scapes_bouquet/pages/home_page.dart';
 // import 'package:scapes_bouquet/pages/login.dart';
 import 'package:scapes_bouquet/pages/register.dart';
 import 'package:scapes_bouquet/utils/routes.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(
+    store: MyStore(),
+    child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

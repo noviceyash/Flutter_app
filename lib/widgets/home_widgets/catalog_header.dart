@@ -10,8 +10,8 @@ class CatalogHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // ignore: deprecated_member_use
-        "Scapes Bouquet".text.xl5.bold.center.color(context.theme.accentColor).make(),
-        SizedBox(height: 30.0,),
+        "Scapes Bouquet And Greetings".text.xl5.bold.center.color(context.theme.accentColor).make(),
+        SizedBox(height: 40.0,),
         "Products".text.xl2.make()
       ],
     );

@@ -1,13 +1,6 @@
 import 'dart:convert';
 
 class CatalogModel {
-  //singleton field 
-  static final catModel = CatalogModel._internal();
-
-  //singleton field constructor
-  CatalogModel._internal();
-
-  factory CatalogModel() => catModel;
 
   static List<Item>? items;
 
