@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MyDrawer(),  
         backgroundColor: context.canvasColor,
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
@@ -66,7 +67,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        ));
+        ),
+      
+    );
   }
 }
 

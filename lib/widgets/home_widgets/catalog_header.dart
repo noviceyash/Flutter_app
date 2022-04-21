@@ -12,8 +12,8 @@ class CatalogHeader extends StatelessWidget {
         // ignore: deprecated_member_use
         "Scapes Bouquet And Greetings".text.xl5.bold.center.color(context.theme.accentColor).make(),
         SizedBox(height: 40.0,),
-        "Products".text.xl2.make()
-      ],
+        "Products".text.xl2.make(),
+      ], 
     );
   }
 }
