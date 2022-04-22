@@ -1,7 +1,8 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:scapes_bouquet/core/store.dart';
+import 'package:scapes_bouquet/models/cart.dart';
 import 'package:scapes_bouquet/models/catalog.dart';
 import 'package:scapes_bouquet/utils/routes.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
@@ -11,6 +12,7 @@ import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
 import '../widgets/item_widget.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   @override
@@ -38,37 +40,44 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
-      drawer: MyDrawer(),  
-        backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        // ignore: deprecated_member_use
-        backgroundColor: context.theme.buttonColor,
-        child: Icon(CupertinoIcons.cart),
-      ),
-        // appBar: AppBar(
-        //   title: Text("Scapes Bouquet"),
-        // ),
-        // now using velocity_x package to make ui better
-        body: SafeArea(
-          child: Container(
-            padding: Vx.m32,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CatalogHeader(),
-                if (CatalogModel.items != null &&
-                    CatalogModel.items!.isNotEmpty)
-                  CatalogList().py16().expand()
-                else
-                  CircularProgressIndicator().centered().expand(),
-      
-              ],
-            ),
+      backgroundColor: context.canvasColor,
+      floatingActionButton: VxBuilder(
+          mutations: {AddMutation, RemoveMutation},
+          builder: (context, _, __) => FloatingActionButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, MyRoutes.cartRoute),
+                // ignore: deprecated_member_use
+                backgroundColor: context.theme.buttonColor,
+                child: Icon(CupertinoIcons.cart),
+              ).badge(
+                  color: Vx.orange500,
+                  size: 26,
+                  count: _cart.items.length,
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ))),
+      // appBar: AppBar(
+      //   title: Text("Scapes Bouquet"),
+      // ),
+      // now using velocity_x package to make ui better
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
+                CatalogList().py16().expand()
+              else
+                CircularProgressIndicator().centered().expand(),
+            ],
           ),
         ),
-      
+      ),
     );
   }
 }
