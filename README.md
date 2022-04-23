@@ -48,4 +48,5 @@ App view in dark mode :
 Special Thanks To : 
  1) Codepur youtube channel, they posted 30 days flutter playlist which was very helpul : https://www.youtube.com/playlist?list=PLrjrqTcKCnhTXI2GyPkaQF47inLp6LoIC
  2) And Hrishikesh Pathak sir's video on payment integration using razorpay : https://www.youtube.com/watch?v=BW-or1pGykA
- Subscribe to their channels, they regularly post educational post 
+ 
+ Subscribe to their channels, they regularly post educational content
