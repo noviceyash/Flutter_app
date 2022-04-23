@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scapes_bouquet/models/cart.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:flutter/services.dart';
 
 import '../core/store.dart';
+import '../utils/routes.dart';
 
 class CartPage extends StatelessWidget {
   @override
@@ -49,9 +53,11 @@ class _CartTotal extends StatelessWidget {
           30.widthBox,
           ElevatedButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: "Buying not supported yet!".text.make(),
-              ));
+              // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              //   content: "Buying not supported yet!".text.make(),
+              // ));
+                  Navigator.pushNamed(context, MyRoutes.paymentRoute);
+                
             },
             // ignore: deprecated_member_use
             style: ButtonStyle(

@@ -4,8 +4,11 @@ import 'package:velocity_x/velocity_x.dart';
 import '../../widgets/themes.dart';
 
 class CatalogHeader extends StatelessWidget {
+  var drawer;
+
   @override
   Widget build(BuildContext context) {
+    var drawer2 = drawer;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:scapes_bouquet/core/store.dart';
 import 'package:scapes_bouquet/models/cart.dart';
 import 'package:scapes_bouquet/models/catalog.dart';
+import 'package:scapes_bouquet/pages/register.dart';
 import 'package:scapes_bouquet/utils/routes.dart';
 import 'package:scapes_bouquet/widgets/themes.dart';
 import "dart:convert";
@@ -68,12 +69,20 @@ class _HomePageState extends State<HomePage> {
           padding: Vx.m32,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
               CatalogHeader(),
               if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
                 CatalogList().py16().expand()
               else
                 CircularProgressIndicator().centered().expand(),
+              
+              ElevatedButton(
+                child: Text('Logout'),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.registerRoute);
+                },
+              )
             ],
           ),
         ),

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "997235474071",
+    "firebase_url": "https://begin-4df97.firebaseio.com",
+    "project_id": "begin-4df97",
+    "storage_bucket": "begin-4df97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997235474071:android:9ba9ea05799ac15a1ef3d2",
+        "android_client_info": {
+          "package_name": "com.example.scapes_bouquet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997235474071-st89ad5q3a27tq6fv3jpg63eltpe3d16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9F3XKFiSDnSYAUxrBHiKh52WbQkbGgNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997235474071-st89ad5q3a27tq6fv3jpg63eltpe3d16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
