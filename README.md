@@ -21,6 +21,8 @@ I am not responsible for what happens with your details so please do enter dummy
 
 This app is based on the concept of buying and delivering Bouquets and Greeting cards.
 
+Download The Application from the Releases Section if you want to test.
+
 App view in light mode : 
 
 
